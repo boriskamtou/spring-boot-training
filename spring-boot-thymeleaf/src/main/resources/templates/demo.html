@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaft Demo</title>
+</head>
+<body>
+    <h2>List Of Students</h2>
+    <table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Age</th>
+        </tr>
+        <tr th:each="student : ${listOfStudent}">
+            <td th:text="${student.firstName}">First Name</td>
+            <td th:text="${student.LastName}">Last Name</td>
+        </tr>
+    </table>
+    <h3>Exam Results</h3>
+    <div th:if="${grade} >= 60">
+        You passed the exam.
+        <div th:switch="${GPA}">You are
+            <span th:case="A">Excellent</span>
+            <span th:case="B">Good</span>
+            <span th:case="C">Okay</span>
+            <span th:case="D">Need improvement</span>
+        </div>
+    </div>
+    <div th:if="${grade} < 60">
+        You failed the exam.
+    </div>
+</body>
+</html>
