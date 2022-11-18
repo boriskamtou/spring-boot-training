@@ -2,6 +2,8 @@ package com.boris.todorestapi.services;
 
 import com.boris.todorestapi.entities.Task;
 import com.boris.todorestapi.repositories.TodoRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,6 +11,7 @@ import java.util.Optional;
 
 @Service
 public class TodoServiceImpl implements TodoService {
+    private static final Logger LOG = LoggerFactory.getLogger(TodoServiceImpl.class);
     public TodoServiceImpl(TodoRepository todoRepository) {
         this.todoRepository = todoRepository;
     }
@@ -25,6 +28,7 @@ public class TodoServiceImpl implements TodoService {
         Task newTask = new Task();
         newTask.setTitle(task.getTitle());
         newTask.setDescription(task.getDescription());
+        LOG.info("The new task is {}", newTask);
         return todoRepository.save(newTask);
     }
 

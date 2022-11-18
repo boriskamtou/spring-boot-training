@@ -1,7 +1,7 @@
 package com.boris.todorestapi.controllers;
 
 import com.boris.todorestapi.entities.Task;
-import com.boris.todorestapi.services.TodoService;
+import com.boris.todorestapi.services.todo.TodoService;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.http.HttpStatus;
