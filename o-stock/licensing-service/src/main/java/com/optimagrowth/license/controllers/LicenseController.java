@@ -4,6 +4,7 @@ import com.optimagrowth.license.entities.License;
 import com.optimagrowth.license.services.LicenseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Locale;
@@ -15,8 +16,6 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 @RequestMapping(value = "/v1/organization/{organizationId}/license")
 public class LicenseController {
     private final LicenseService licenseService;
-
-    @Autowired
     public LicenseController(LicenseService licenseService) {
         this.licenseService = licenseService;
     }
@@ -37,7 +36,7 @@ public class LicenseController {
     }
 
     @PutMapping
-    public ResponseEntity<String> updateLicense(
+    public ResponseEntity<License> updateLicense(
             @RequestBody License request,
             @PathVariable("organizationId") String organizationId,
             @RequestHeader(value = "Accept-Language", required = false) Locale locale) {
@@ -45,7 +44,7 @@ public class LicenseController {
     }
 
     @PostMapping
-    public ResponseEntity<String> createLicense(@RequestBody License request,
+    public ResponseEntity<License> createLicense(@RequestBody License request,
                                                 @PathVariable("organizationId") String organizationId,
                                                 @RequestHeader(value = "Accept-Language", required = false) Locale locale) {
         return ResponseEntity.ok(licenseService.createLicense(request, organizationId, locale));
