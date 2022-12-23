@@ -1,13 +1,10 @@
 package com.optimagrowth.license.entities;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import org.springframework.hateoas.RepresentationModel;
 
 @Entity

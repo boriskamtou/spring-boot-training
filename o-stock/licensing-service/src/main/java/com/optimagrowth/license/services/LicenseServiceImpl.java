@@ -27,7 +27,7 @@ public class LicenseServiceImpl implements LicenseService {
         License license = licenceRepository.findByOrganizationIdAndLicenseId(licenseId, organizationId);
         if (license == null) {
             throw new IllegalArgumentException(String.format(
-                    messages.getMessage("license.search.error.message", null, null),
+                    messages.getMessage("license.search.error.message", null, locale),
                     licenseId, organizationId));
         }
         return license.withComment(config.getProperty());
@@ -53,7 +53,7 @@ public class LicenseServiceImpl implements LicenseService {
         license.setLicenseId(licenseId);
         licenceRepository.delete(license);
         responseMessage = String.format(messages.getMessage(
-                "license.delete.message", null, null), licenseId);
+                "license.delete.message", null, locale), licenseId);
         return responseMessage;
     }
 }

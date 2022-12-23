@@ -5,6 +5,7 @@ import com.optimagrowth.license.config.ServiceConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.web.servlet.LocaleResolver;
@@ -14,6 +15,7 @@ import java.util.Locale;
 
 @SpringBootApplication
 @EnableConfigurationProperties(ServiceConfig.class)
+@RefreshScope
 public class LicensingServiceApplication {
 
     public static void main(String[] args) {
