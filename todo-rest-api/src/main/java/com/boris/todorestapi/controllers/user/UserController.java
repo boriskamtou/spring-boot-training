@@ -1,4 +1,4 @@
-package com.boris.todorestapi.controllers;
+package com.boris.todorestapi.controllers.user;
 
 import org.springframework.web.bind.annotation.RestController;
 

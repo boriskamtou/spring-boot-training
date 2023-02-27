@@ -1,4 +1,4 @@
-package com.boris.todorestapi.services;
+package com.boris.todorestapi.services.todo;
 
 import com.boris.todorestapi.entities.Task;
 import org.springframework.stereotype.Service;

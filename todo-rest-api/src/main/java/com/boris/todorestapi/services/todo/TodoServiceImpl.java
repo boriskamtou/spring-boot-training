@@ -1,7 +1,7 @@
-package com.boris.todorestapi.services;
+package com.boris.todorestapi.services.todo;
 
 import com.boris.todorestapi.entities.Task;
-import com.boris.todorestapi.repositories.TodoRepository;
+import com.boris.todorestapi.repositories.todo.TodoRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

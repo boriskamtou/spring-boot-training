@@ -30,8 +30,8 @@ public class SwaggerConfig {
                 "TODO API",
                 "This API returns operations related to a todo manager.",
                 "1.0",
-                "http://www.udacity.com/tos",
-                new Contact("Boris Kamtou", "www.boris.com", "boriskamtou@gmail.com"),
+                "http://www.boris.com/",
+                 new Contact("Boris Kamtou", "www.boris.com", "boriskamtou@gmail.com"),
                 "License of API", "www.boris.com", Collections.emptyList());
     }
 }
